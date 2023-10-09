@@ -64,7 +64,7 @@ function Navbar() {
           <img src={profilepic} className="profile-pic"></img>
           <Link
             style={{ textDecoration: "none", color: "white" }}
-            to={"/profile"}
+            to={"/signin"}
           >
             <p>Omar Yasin</p>
           </Link>
@@ -75,7 +75,6 @@ function Navbar() {
         </div>
       </div>
       {/* </Container> */}
-      
     </div>
   );
 }

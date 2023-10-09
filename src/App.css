@@ -29,6 +29,11 @@
   margin-left: 20px;
   padding: 0;
 }
+.instalogo1 {
+  width: 103px;
+  height: 29px;
+margin: auto;
+}
 .logocont {
   height: 92px;
 }
@@ -297,4 +302,48 @@ Link{
 .postinprofile{
   display: grid;
   grid-template-columns: repeat(3,1fr);
+}
+.signupclick{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  
+  justify-content: center;
+  background-color: #2F69C4;
+  width: 250px;
+height: 38px;
+border-radius: 10px;
+}
+
+.texttest{
+  color: rgba(255, 255, 255, 0.53);
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px; /* 125% */
+letter-spacing: 0.16px;
+margin-bottom: 10px;
+}
+.signincont{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 60px;
+}
+
+/* images style  */
+.parent {
+  position: relative;
+
+}
+.image1 {
+  position: relative;
+  top: 30px;
+  left: 0;
+}
+.image2 {
+  position: absolute;
+  height: 40px;
+  right: 100px;
 }
