@@ -11,31 +11,49 @@ import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlin
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useState } from "react";
 function Post(props) {
+  const[counter,setcounter]=useState(props.likes);
   const [liked, setliked] = useState(true);
   return (
     <Container maxWidth="sm">
       <div className="postcon">
         <div>
-          <Profilepic />
+          <Profilepic name={props.name} id ={props.id} postid={props.postid}/>
         </div>
         <div style={{ marginTop: 10 }}>
-          <img className="postimg" src={setup}></img>
+          <img className="postimg" src={props.img}></img>
         </div>
         <div className="interact-withpost">
-          {liked ? <div onClick={()=>{setliked(!liked)}}><FavoriteBorderIcon /></div> :<div onClick={()=>{setliked(!liked)}}> <FavoriteIcon /></div>}
-          
+          {liked ? (
+            <div
+              onClick={() => {
+                setliked(!liked);
+                setcounter(counter+1);
+              }}
+            >
+              <FavoriteBorderIcon />
+            </div>
+          ) : (
+            <div
+              onClick={() => {
+                setliked(!liked);
+                setcounter(counter-1);
+              }}
+            >
+              {" "}
+              <FavoriteIcon />
+            </div>
+          )}
+
           <ChatBubbleOutlineOutlinedIcon />
           <SendIcon />
           <BookmarkBorderOutlinedIcon style={{ marginLeft: "auto" }} />
         </div>
         <div>
-          <p className="ptext">744 likes</p>
+          <p className="ptext">{counter} likes</p>
         </div>
         <div className="ptext">
-          <p className="ptext">omaradwn</p>
-          <p className="ptext">
-            this is a test and static data will be changed using API
-          </p>
+          <p className="ptext">{props.name}</p>
+          <p className="ptext">{props.dis}</p>
         </div>
       </div>
     </Container>

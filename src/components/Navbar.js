@@ -14,7 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import usecontext from "../usecontext/Modalcontext";
 import Modalcreate from "../pages/Modalcreate";
 
-function Navbar() {
+function Navbar({setpost}) {
   // const { setOpen } = useContext(usecontext);
   return (
     <div className="Navcont">
@@ -59,12 +59,12 @@ function Navbar() {
           <FavoriteBorderIcon sx={{ fontSize: 30 }} />
           <p>Notifications</p>
         </div>
-        <Modalcreate />
+        <Modalcreate  />
         <div className="navitem">
           <img src={profilepic} className="profile-pic"></img>
           <Link
             style={{ textDecoration: "none", color: "white" }}
-            to={"/signin"}
+            to={"/profile"}
           >
             <p>Omar Yasin</p>
           </Link>

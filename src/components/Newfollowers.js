@@ -1,9 +1,10 @@
 import React from "react";
 import pic1 from "../assets/StoriesAvatars/graduated-student.png";
 import { Button } from "@mui/material";
-
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Newfollowers() {
+  const navigate = useNavigate();
   return (
     <div className="newfollowercont">
       <div>
@@ -22,8 +23,15 @@ function Newfollowers() {
         </div>
       </div>
       <div className="addbtn">
-        <Button variant="text" size="small">
-          switch
+        <Button
+          onClick={() => {
+            localStorage.removeItem("token");
+            navigate("/signin");
+          }}
+          variant="text"
+          size="small"
+        >
+          Logout
         </Button>
       </div>
     </div>

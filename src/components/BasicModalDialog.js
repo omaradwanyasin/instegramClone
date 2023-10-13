@@ -22,6 +22,9 @@ export default function BasicModalDialog() {
       .post("http://16.170.173.197/users/login", data)
       .then((response) => {
         const token = response.data.token;
+        const id = response.data.user.id;
+        console.log(`hhhhhhhhhhhhhhhhhhhhhh ${id}`);
+        localStorage.setItem("id", id);
         localStorage.setItem("token", token);
         navigate("/");
       })
@@ -71,6 +74,7 @@ export default function BasicModalDialog() {
           <FormControl>
             <Input
               required
+              type="password"
               placeholder="Password"
               onChange={(e) => {
                 setdata({ ...data, password: e.target.value });
